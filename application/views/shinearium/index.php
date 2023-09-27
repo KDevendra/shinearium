@@ -518,7 +518,7 @@
                 <div class="block block-product-cats slider round-border">
                   <div class="block-widget-wrap">
                     <div class="block-title">
-                      <h2>Top Categories</h2>
+                      <h2>Top 10 Categories</h2>
                     </div>
                     <div class="block-content">
                       <div class="product-cats-list slick-wrap">
