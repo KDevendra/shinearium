@@ -75,10 +75,10 @@ $query_builder = TRUE;
 // local
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost:2023',
-	'username' => 'root',
-	'password' => 'root',
-	'database' => 'db_shinearium',
+	'hostname' => 'localhost',
+	'username' => 'u133230334_bhavnatiwari63',
+	'password' => 'uxY*z+eMx&9R',
+	'database' => 'u133230334_shinearium',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
