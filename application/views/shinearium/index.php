@@ -3,38 +3,35 @@
 
 <head>
   <!-- Meta Data -->
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title><?= $title ?></title>
-  <meta name="description" content="<?= $description ?>">
-  <link rel="canonical" href="<?= $canonical ?>">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shinearium – Jewelry Accessories </title>
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(''); ?>include/web/media/favicon.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="media/favicon.png">
   <!-- Dependency Styles -->
-  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/bootstrap/css/bootstrap.min.css" type="text/css" />
-  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/feather-font/css/iconfont.css" type="text/css" />
-  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/icomoon-font/css/icomoon.css" type="text/css" />
-  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/font-awesome/css/font-awesome.css" type="text/css" />
-  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/wpbingofont/css/wpbingofont.css" type="text/css" />
-  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/elegant-icons/css/elegant.css" type="text/css" />
-  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/slick/css/slick.css" type="text/css" />
-  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/slick/css/slick-theme.css" type="text/css" />
-  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/mmenu/css/mmenu.min.css" type="text/css" />
+  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/bootstrap/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/feather-font/css/iconfont.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/icomoon-font/css/icomoon.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/font-awesome/css/font-awesome.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/wpbingofont/css/wpbingofont.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/elegant-icons/css/elegant.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/slick/css/slick.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/slick/css/slick-theme.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/libs/mmenu/css/mmenu.min.css" type="text/css">
   <!-- Site Stylesheet -->
-  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/assets/css/app.css" type="text/css" />
-  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/assets/css/responsive.css" type="text/css" />
+  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/assets/css/app.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url(''); ?>include/web/assets/css/responsive.css" type="text/css">
   <!-- Google Web Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap" rel="stylesheet">
   <!-- jquery common -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
 </head>
 
 <body class="home">
   <div id="page" class="hfeed page-wrapper">
-    <header id="site-header" class="site-header header-v1">
+    <header id="site-header" class="site-header header-v1 ">
       <div class="header-mobile">
         <div class="section-padding">
           <div class="section-container">
@@ -46,8 +43,8 @@
               </div>
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 header-center">
                 <div class="site-logo">
-                  <a href="<?php echo base_url(); ?>">
-                    <img width="400" height="79" src="<?php echo base_url(''); ?>include/web/media/shinearium-logo.png" alt="Shinearium – Jewelry Store" />
+                  <a href="/index.html">
+                    <img width="400" height="79" src="/media/shinearium-logo.png" alt="Shinearium – Jewelry Store" />
                   </a>
                 </div>
               </div>
@@ -68,30 +65,30 @@
                         </ul>
                       </div>
                       <div class="cart-list-wrap">
-                        <ul class="cart-list">
+                        <ul class="cart-list ">
                           <li class="mini-cart-item">
                             <a href="/html/#" class="remove" title="Remove this item"><i class="icon_close"></i></a>
-                            <a href="/html/shop-details.html" class="product-image"><img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/3.jpg" alt="" /></a>
+                            <a href="/html/shop-details.html" class="product-image"><img width="600" height="600" src="/media/product/3.jpg" alt=""></a>
                             <a href="/html/shop-details.html" class="product-name">Twin Hoops</a>
                             <div class="quantity">Qty: 1</div>
                             <div class="price">$150.00</div>
                           </li>
                           <li class="mini-cart-item">
                             <a href="/html/#" class="remove" title="Remove this item"><i class="icon_close"></i></a>
-                            <a href="/html/shop-details.html" class="product-image"><img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/1.jpg" alt="" /></a>
+                            <a href="/html/shop-details.html" class="product-image"><img width="600" height="600" src="/media/product/1.jpg" alt=""></a>
                             <a href="/html/shop-details.html" class="product-name">Medium Flat Hoops</a>
                             <div class="quantity">Qty: 1</div>
                             <div class="price">$100.00</div>
                           </li>
                         </ul>
                         <div class="total-cart">
-                          <div class="title-total">Total:</div>
+                          <div class="title-total">Total: </div>
                           <div class="total-price"><span>$250.00</span></div>
                         </div>
                         <div class="free-ship">
                           <div class="title-ship">Buy <strong>$400</strong> more to enjoy <strong>FREE Shipping</strong></div>
                           <div class="total-percent">
-                            <div class="percent" style="width: 20%;"></div>
+                            <div class="percent" style="width:20%"></div>
                           </div>
                         </div>
                         <div class="buttons">
@@ -139,8 +136,8 @@
               <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 header-left">
                   <div class="site-logo">
-                    <a href="<?php echo base_url(); ?>">
-                      <img width="400" height="140" src="<?php echo base_url(''); ?>include/web/media/shinearium-logo.png" alt="shinearium – Jewelry Store" />
+                    <a href="/index.html">
+                      <img width="400" height="140" src="/media/shinearium-logo.png" alt="shinearium – Jewelry Store" />
                     </a>
                   </div>
                 </div>
@@ -150,12 +147,13 @@
                     <nav id="main-navigation">
                       <ul id="menu-main-menu" class="menu">
                         <li class="level-0">
-                          <a href="<?php echo base_url(); ?>"><span class="menu-item-text">Home</span></a>
+                          <a href="/index.html"><span class="menu-item-text">Home</span></a>
                         </li>
                         <li class="level-0 menu-item">
                           <a href="/html/shop.html"><span class="menu-item-text">Shop</span></a>
+
                         </li>
-                        <li class="level-0 menu-item menu-item-has-children mega-menu mega-menu-fullwidth align-center">
+                        <li class="level-0 menu-item menu-item-has-children mega-menu mega-menu-fullwidth align-center ">
                           <a href="/html/blog-grid-left.html"><span class="menu-item-text">Category</span></a>
                           <div class="sub-menu">
                             <div class="row">
@@ -163,19 +161,24 @@
                                 <div class="menu-section">
                                   <h2 class="sub-menu-title">Product Category</h2>
                                   <ul class="menu-list">
-                                    <?php if (isset($categories_list) && !empty($categories_list)) : ?>
-                                      <?php foreach ($categories_list as $category) : ?>
-                                        <li>
-                                          <a href="<?= base_url('category/').$category->slug ?>"><span class="menu-item-text"><?= $category->title ?></span></a>
-                                        </li>
-                                      <?php endforeach; ?>
-                                    <?php else : ?>
-                                      <li>
-                                        <span class="menu-item-text"><?= isset($error_message) ? $error_message : "An error occurred." ?></span>
-                                      </li>
-                                    <?php endif; ?>
+                                    <li>
+                                      <a href="/html/ring.html"><span class="menu-item-text">Rings</span></a>
+                                    </li>
+                                    <li>
+                                      <a href="/html/earring.html"><span class="menu-item-text">Earrings</span></a>
+                                    </li>
+                                    <li>
+                                      <a href="/html/bracelet.html"><span class="menu-item-text">Bracelets</span></a>
+                                    </li>
+                                    <li>
+                                      <a href="/html/pendant.html"><span class="menu-item-text">Pendant</span></a>
+                                    </li>
+                                    <li>
+                                      <a href="/html/necklace.html"><span class="menu-item-text">Necklace</span></a>
+                                    </li>
                                   </ul>
                                 </div>
+
 
                               </div>
                               <div class="col-md-7">
@@ -185,7 +188,7 @@
                                     <ul class="posts-list">
                                       <li class="post-item">
                                         <a href="/html/blog-details-right.html" class="post-image">
-                                          <img src="<?php echo base_url(''); ?>include/web/media/blog/1.jpg" />
+                                          <img src="/media/blog/1.jpg">
                                         </a>
                                         <div class="post-content">
                                           <h2 class="post-title">
@@ -201,7 +204,7 @@
                                       </li>
                                       <li class="post-item">
                                         <a href="/html/blog-details-right.html" class="post-image">
-                                          <img src="<?php echo base_url(''); ?>include/web/media/blog/2.jpg" />
+                                          <img src="/media/blog/2.jpg">
                                         </a>
                                         <div class="post-content">
                                           <h2 class="post-title">
@@ -217,7 +220,7 @@
                                       </li>
                                       <li class="post-item">
                                         <a href="/html/blog-details-right.html" class="post-image">
-                                          <img src="<?php echo base_url(''); ?>include/web/media/blog/3.jpg" />
+                                          <img src="/media/blog/3.jpg">
                                         </a>
                                         <div class="post-content">
                                           <h2 class="post-title">
@@ -335,30 +338,30 @@
                             </ul>
                           </div>
                           <div class="cart-list-wrap">
-                            <ul class="cart-list">
+                            <ul class="cart-list ">
                               <li class="mini-cart-item">
                                 <a href="/html/#" class="remove" title="Remove this item"><i class="icon_close"></i></a>
-                                <a href="/html/shop-details.html" class="product-image"><img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/3.jpg" alt="" /></a>
+                                <a href="/html/shop-details.html" class="product-image"><img width="600" height="600" src="/media/product/3.jpg" alt=""></a>
                                 <a href="/html/shop-details.html" class="product-name">Twin Hoops</a>
                                 <div class="quantity">Qty: 1</div>
                                 <div class="price">$150.00</div>
                               </li>
                               <li class="mini-cart-item">
                                 <a href="/html/#" class="remove" title="Remove this item"><i class="icon_close"></i></a>
-                                <a href="/html/shop-details.html" class="product-image"><img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/1.jpg" alt="" /></a>
+                                <a href="/html/shop-details.html" class="product-image"><img width="600" height="600" src="/media/product/1.jpg" alt=""></a>
                                 <a href="/html/shop-details.html" class="product-name">Medium Flat Hoops</a>
                                 <div class="quantity">Qty: 1</div>
                                 <div class="price">$100.00</div>
                               </li>
                             </ul>
                             <div class="total-cart">
-                              <div class="title-total">Total:</div>
+                              <div class="title-total">Total: </div>
                               <div class="total-price"><span>$250.00</span></div>
                             </div>
                             <div class="free-ship">
                               <div class="title-ship">Buy <strong>$400</strong> more to enjoy <strong>FREE Shipping</strong></div>
                               <div class="total-percent">
-                                <div class="percent" style="width: 20%;"></div>
+                                <div class="percent" style="width:20%"></div>
                               </div>
                             </div>
                             <div class="buttons">
@@ -388,14 +391,11 @@
                   <div class="item slick-slide">
                     <div class="item-content">
                       <div class="content-image">
-                        <img width="1920" height="1080" src="<?php echo base_url(''); ?>include/web/media/slider/1-1.jpg" alt="Image Slider" />
+                        <img width="1920" height="1080" src="<?php echo base_url(''); ?>include/web/media/slider/1-1.jpg" alt="Image Slider">
                       </div>
                       <div class="item-info horizontal-start vertical-middle">
                         <div class="content">
-                          <h2 class="title-slider">
-                            Discover a <br />
-                            world of jewelry
-                          </h2>
+                          <h2 class="title-slider">Discover a <br>world of jewelry</h2>
                           <a class="button-slider button button-white button-outline thick-border" href="shop.html">Explore Bestseller</a>
                         </div>
                       </div>
@@ -404,14 +404,11 @@
                   <div class="item slick-slide">
                     <div class="item-content">
                       <div class="content-image">
-                        <img width="1920" height="1080" src="<?php echo base_url(''); ?>include/web/media/slider/1-2.jpg" alt="Image Slider" />
+                        <img width="1920" height="1080" src="<?php echo base_url(''); ?>include/web/media/slider/1-2.jpg" alt="Image Slider">
                       </div>
                       <div class="item-info horizontal-start vertical-middle">
                         <div class="content">
-                          <h2 class="title-slider">
-                            Discover the<br />
-                            Best of the Best
-                          </h2>
+                          <h2 class="title-slider">Discover the<br> Best of the Best</h2>
                           <a class="button-slider button button-white button-outline thick-border" href="shop.html">Explore Bestseller</a>
                         </div>
                       </div>
@@ -420,14 +417,11 @@
                   <div class="item slick-slide">
                     <div class="item-content">
                       <div class="content-image">
-                        <img width="1920" height="1080" src="<?php echo base_url(''); ?>include/web/media/slider/1-3.jpg" alt="Image Slider" />
+                        <img width="1920" height="1080" src="<?php echo base_url(''); ?>include/web/media/slider/1-3.jpg" alt="Image Slider">
                       </div>
                       <div class="item-info horizontal-start vertical-middle">
                         <div class="content">
-                          <h2 class="title-slider">
-                            Oh,<br />
-                            Hello Newness!
-                          </h2>
+                          <h2 class="title-slider">Oh,<br> Hello Newness!</h2>
                           <a class="button-slider button button-white button-outline thick-border" href="shop.html">Explore Bestseller</a>
                         </div>
                       </div>
@@ -448,7 +442,7 @@
                             <div class="banner-wrapper banners">
                               <div class="banner-image">
                                 <a href="/html/shop.html">
-                                  <img width="630" height="457" src="<?php echo base_url(''); ?>include/web/media/banner/banner-1-1.jpg" alt="Banner Image" />
+                                  <img width="630" height="457" src="<?php echo base_url(''); ?>include/web/media/banner/banner-1-1.jpg" alt="Banner Image">
                                 </a>
                               </div>
                               <div class="banner-wrapper-infor">
@@ -469,7 +463,7 @@
                             <div class="banner-wrapper banners">
                               <div class="banner-image">
                                 <a href="/html/shop.html">
-                                  <img width="450" height="457" src="<?php echo base_url(''); ?>include/web/media/banner/banner-1-2.jpg" alt="Banner Image" />
+                                  <img width="450" height="457" src="<?php echo base_url(''); ?>include/web/media/banner/banner-1-2.jpg" alt="Banner Image">
                                 </a>
                               </div>
                               <div class="banner-wrapper-infor text-center">
@@ -490,15 +484,13 @@
                             <div class="banner-wrapper banners">
                               <div class="banner-image">
                                 <a href="/html/shop.html">
-                                  <img width="630" height="457" src="<?php echo base_url(''); ?>include/web/media/banner/banner-1-3.jpg" alt="Banner Image" />
+                                  <img width="630" height="457" src="<?php echo base_url(''); ?>include/web/media/banner/banner-1-3.jpg" alt="Banner Image">
                                 </a>
                               </div>
                               <div class="banner-wrapper-infor">
                                 <div class="info">
                                   <div class="content">
-                                    <h3 class="title-banner">
-                                      Clearance Sale
-                                    </h3>
+                                    <h3 class="title-banner">Clearance Sale</h3>
                                     <a class="button" href="/html/shop.html">Shop Now</a>
                                   </div>
                                 </div>
@@ -518,7 +510,7 @@
                 <div class="block block-product-cats slider round-border">
                   <div class="block-widget-wrap">
                     <div class="block-title">
-                      <h2>Top 10 Categories</h2>
+                      <h2>Top Categories</h2>
                     </div>
                     <div class="block-content">
                       <div class="product-cats-list slick-wrap">
@@ -527,7 +519,7 @@
                             <div class="item-product-cat-content">
                               <a href="/html/shop.html">
                                 <div class="item-image animation-horizontal">
-                                  <img width="258" height="258" src="<?php echo base_url(''); ?>include/web/media/product/cat-1.jpg" alt="Bracelets" />
+                                  <img width="258" height="258" src="<?php echo base_url(''); ?>include/web/media/product/cat-1.jpg" alt="Bracelets">
                                 </div>
                               </a>
                               <div class="product-cat-content-info">
@@ -541,7 +533,7 @@
                             <div class="item-product-cat-content">
                               <a href="/html/shop.html">
                                 <div class="item-image animation-horizontal">
-                                  <img width="258" height="258" src="<?php echo base_url(''); ?>include/web/media/product/cat-2.jpg" alt="Charms" />
+                                  <img width="258" height="258" src="<?php echo base_url(''); ?>include/web/media/product/cat-2.jpg" alt="Charms">
                                 </div>
                               </a>
                               <div class="product-cat-content-info">
@@ -555,7 +547,7 @@
                             <div class="item-product-cat-content">
                               <a href="/html/shop.html">
                                 <div class="item-image animation-horizontal">
-                                  <img width="258" height="258" src="<?php echo base_url(''); ?>include/web/media/product/cat-3.jpg" alt="Earrings" />
+                                  <img width="258" height="258" src="<?php echo base_url(''); ?>include/web/media/product/cat-3.jpg" alt="Earrings">
                                 </div>
                               </a>
                               <div class="product-cat-content-info">
@@ -569,7 +561,7 @@
                             <div class="item-product-cat-content">
                               <a href="/html/shop.html">
                                 <div class="item-image animation-horizontal">
-                                  <img width="258" height="258" src="<?php echo base_url(''); ?>include/web/media/product/cat-4.jpg" alt="Necklaces" />
+                                  <img width="258" height="258" src="<?php echo base_url(''); ?>include/web/media/product/cat-4.jpg" alt="Necklaces">
                                 </div>
                               </a>
                               <div class="product-cat-content-info">
@@ -583,7 +575,7 @@
                             <div class="item-product-cat-content">
                               <a href="/html/shop.html">
                                 <div class="item-image animation-horizontal">
-                                  <img width="258" height="258" src="<?php echo base_url(''); ?>include/web/media/product/cat-5.jpg" alt="Rings" />
+                                  <img width="258" height="258" src="<?php echo base_url(''); ?>include/web/media/product/cat-5.jpg" alt="Rings">
                                 </div>
                               </a>
                               <div class="product-cat-content-info">
@@ -597,7 +589,7 @@
                             <div class="item-product-cat-content">
                               <a href="/html/shop.html">
                                 <div class="item-image animation-horizontal">
-                                  <img width="258" height="258" src="<?php echo base_url(''); ?>include/web/media/product/cat-1.jpg" alt="Bracelets" />
+                                  <img width="258" height="258" src="<?php echo base_url(''); ?>include/web/media/product/cat-1.jpg" alt="Bracelets">
                                 </div>
                               </a>
                               <div class="product-cat-content-info">
@@ -620,10 +612,7 @@
                 <div class="row">
                   <div class="section-column left">
                     <div class="intro-wrap">
-                      <h2 class="intro-title">
-                        Handcrafted<br />
-                        &amp; Ethically Sourced
-                      </h2>
+                      <h2 class="intro-title">Handcrafted<br> &amp; Ethically Sourced</h2>
                       <div class="intro-item">
                         <div class="icon">
                           <span class="wrap animation-horizontal">
@@ -658,9 +647,7 @@
                         </div>
                         <div class="content">
                           <h3 class="title">FAIR PRICING</h3>
-                          <div class="text">
-                            Nullam quis ante. Pellentesque libero tortor, tincidunt et, tinciduntamet est.In hac habitasse platea dictumst. Praesent nec nisl a purus blandit viverra
-                          </div>
+                          <div class="text">Nullam quis ante. Pellentesque libero tortor, tincidunt et, tinciduntamet est.In hac habitasse platea dictumst. Praesent nec nisl a purus blandit viverra</div>
                         </div>
                       </div>
                       <div class="intro-item">
@@ -678,9 +665,7 @@
                         </div>
                         <div class="content">
                           <h3 class="title">HIGH QUALITY</h3>
-                          <div class="text">
-                            Nullam quis ante. Pellentesque libero tortor, tincidunt et, tinciduntamet est.In hac habitasse platea dictumst. Praesent nec nisl a purus blandit viverra
-                          </div>
+                          <div class="text">Nullam quis ante. Pellentesque libero tortor, tincidunt et, tinciduntamet est.In hac habitasse platea dictumst. Praesent nec nisl a purus blandit viverra</div>
                         </div>
                       </div>
                       <div class="intro-btn">
@@ -690,7 +675,7 @@
                   </div>
                   <div class="section-column right">
                     <a href="/html/#">
-                      <img class="hover-opacity" width="820" height="674" src="<?php echo base_url(''); ?>include/web/media/banner/intro-1.jpg" alt="intro" />
+                      <img class="hover-opacity" width="820" height="674" src="<?php echo base_url(''); ?>include/web/media/banner/intro-1.jpg" alt="intro">
                     </a>
                   </div>
                 </div>
@@ -716,8 +701,8 @@
                                   </div>
                                   <div class="product-thumb-hover">
                                     <a href="/html/shop-details.html">
-                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/1.jpg" class="post-image" alt="" />
-                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/1-2.jpg" class="hover-image back" alt="" />
+                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/1.jpg" class="post-image" alt="">
+                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/1-2.jpg" class="hover-image back" alt="">
                                     </a>
                                   </div>
                                   <div class="product-button">
@@ -725,14 +710,10 @@
                                       <a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
                                     </div>
                                     <div class="btn-wishlist" data-title="Wishlist">
-                                      <button class="product-btn">
-                                        Add to wishlist
-                                      </button>
+                                      <button class="product-btn">Add to wishlist</button>
                                     </div>
                                     <div class="btn-compare" data-title="Compare">
-                                      <button class="product-btn">
-                                        Compare
-                                      </button>
+                                      <button class="product-btn">Compare</button>
                                     </div>
                                     <span class="product-quickview" data-title="Quick View">
                                       <a href="/html/#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
@@ -745,9 +726,7 @@
                                       <div class="star star-0"></div>
                                       <span class="count">(0 review)</span>
                                     </div>
-                                    <h3 class="product-title">
-                                      <a href="/html/shop-details.html">Medium Flat Hoops</a>
-                                    </h3>
+                                    <h3 class="product-title"><a href="/html/shop-details.html">Medium Flat Hoops</a></h3>
                                     <span class="price">$100.00</span>
                                   </div>
                                 </div>
@@ -764,8 +743,8 @@
                                   </div>
                                   <div class="product-thumb-hover">
                                     <a href="/html/shop-details.html">
-                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/2.jpg" class="post-image" alt="" />
-                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/2-2.jpg" class="hover-image back" alt="" />
+                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/2.jpg" class="post-image" alt="">
+                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/2-2.jpg" class="hover-image back" alt="">
                                     </a>
                                   </div>
                                   <div class="product-button">
@@ -773,14 +752,10 @@
                                       <a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
                                     </div>
                                     <div class="btn-wishlist" data-title="Wishlist">
-                                      <button class="product-btn">
-                                        Add to wishlist
-                                      </button>
+                                      <button class="product-btn">Add to wishlist</button>
                                     </div>
                                     <div class="btn-compare" data-title="Compare">
-                                      <button class="product-btn">
-                                        Compare
-                                      </button>
+                                      <button class="product-btn">Compare</button>
                                     </div>
                                     <span class="product-quickview" data-title="Quick View">
                                       <a href="/html/#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
@@ -793,9 +768,7 @@
                                       <div class="star star-5"></div>
                                       <span class="count">(1 review)</span>
                                     </div>
-                                    <h3 class="product-title">
-                                      <a href="/html/shop-details.html">Bold Pearl Hoop Earrings</a>
-                                    </h3>
+                                    <h3 class="product-title"><a href="/html/shop-details.html">Bold Pearl Hoop Earrings</a></h3>
                                     <span class="price">
                                       <del aria-hidden="true"><span>$200.00</span></del>
                                       <ins><span>$180.00</span></ins>
@@ -814,8 +787,8 @@
                                   </div>
                                   <div class="product-thumb-hover">
                                     <a href="/html/shop-details.html">
-                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/3.jpg" class="post-image" alt="" />
-                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/3-2.jpg" class="hover-image back" alt="" />
+                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/3.jpg" class="post-image" alt="">
+                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/3-2.jpg" class="hover-image back" alt="">
                                     </a>
                                   </div>
                                   <div class="product-button">
@@ -823,14 +796,10 @@
                                       <a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
                                     </div>
                                     <div class="btn-wishlist" data-title="Wishlist">
-                                      <button class="product-btn">
-                                        Add to wishlist
-                                      </button>
+                                      <button class="product-btn">Add to wishlist</button>
                                     </div>
                                     <div class="btn-compare" data-title="Compare">
-                                      <button class="product-btn">
-                                        Compare
-                                      </button>
+                                      <button class="product-btn">Compare</button>
                                     </div>
                                     <span class="product-quickview" data-title="Quick View">
                                       <a href="/html/#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
@@ -843,9 +812,7 @@
                                       <div class="star star-0"></div>
                                       <span class="count">(0 review)</span>
                                     </div>
-                                    <h3 class="product-title">
-                                      <a href="/html/shop-details.html">Twin Hoops</a>
-                                    </h3>
+                                    <h3 class="product-title"><a href="/html/shop-details.html">Twin Hoops</a></h3>
                                     <span class="price">$150.00</span>
                                   </div>
                                 </div>
@@ -861,8 +828,8 @@
                                   </div>
                                   <div class="product-thumb-hover">
                                     <a href="/html/shop-details.html">
-                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/4.jpg" class="post-image" alt="" />
-                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/4-2.jpg" class="hover-image back" alt="" />
+                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/4.jpg" class="post-image" alt="">
+                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/4-2.jpg" class="hover-image back" alt="">
                                     </a>
                                   </div>
                                   <div class="product-button">
@@ -870,14 +837,10 @@
                                       <a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
                                     </div>
                                     <div class="btn-wishlist" data-title="Wishlist">
-                                      <button class="product-btn">
-                                        Add to wishlist
-                                      </button>
+                                      <button class="product-btn">Add to wishlist</button>
                                     </div>
                                     <div class="btn-compare" data-title="Compare">
-                                      <button class="product-btn">
-                                        Compare
-                                      </button>
+                                      <button class="product-btn">Compare</button>
                                     </div>
                                     <span class="product-quickview" data-title="Quick View">
                                       <a href="/html/#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
@@ -890,9 +853,7 @@
                                       <div class="star star-4"></div>
                                       <span class="count">(2 reviews)</span>
                                     </div>
-                                    <h3 class="product-title">
-                                      <a href="/html/shop-details.html">Yilver And Turquoise Earrings</a>
-                                    </h3>
+                                    <h3 class="product-title"><a href="/html/shop-details.html">Yilver And Turquoise Earrings</a></h3>
                                     <span class="price">
                                       <del aria-hidden="true"><span>$150.00</span></del>
                                       <ins><span>$100.00</span></ins>
@@ -911,8 +872,8 @@
                                   </div>
                                   <div class="product-thumb-hover">
                                     <a href="/html/shop-details.html">
-                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/13.jpg" class="post-image" alt="" />
-                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/13-2.jpg" class="hover-image back" alt="" />
+                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/13.jpg" class="post-image" alt="">
+                                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/13-2.jpg" class="hover-image back" alt="">
                                     </a>
                                   </div>
                                   <div class="product-button">
@@ -920,14 +881,10 @@
                                       <a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
                                     </div>
                                     <div class="btn-wishlist" data-title="Wishlist">
-                                      <button class="product-btn">
-                                        Add to wishlist
-                                      </button>
+                                      <button class="product-btn">Add to wishlist</button>
                                     </div>
                                     <div class="btn-compare" data-title="Compare">
-                                      <button class="product-btn">
-                                        Compare
-                                      </button>
+                                      <button class="product-btn">Compare</button>
                                     </div>
                                     <span class="product-quickview" data-title="Quick View">
                                       <a href="/html/#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
@@ -943,9 +900,7 @@
                                       <div class="star star-5"></div>
                                       <span class="count">(1 review)</span>
                                     </div>
-                                    <h3 class="product-title">
-                                      <a href="/html/shop-details.html">Medium Flat Hoops</a>
-                                    </h3>
+                                    <h3 class="product-title"><a href="/html/shop-details.html">Medium Flat Hoops</a></h3>
                                     <span class="price">
                                       <del aria-hidden="true"><span>$150.00</span></del>
                                       <ins><span>$140.00</span></ins>
@@ -974,15 +929,13 @@
                             <div class="banner-wrapper banners">
                               <div class="banner-image">
                                 <a href="/html/shop.html">
-                                  <img width="856" height="496" src="<?php echo base_url(''); ?>include/web/media/banner/banner-1-4.jpg" alt="Banner Image" />
+                                  <img width="856" height="496" src="<?php echo base_url(''); ?>include/web/media/banner/banner-1-4.jpg" alt="Banner Image">
                                 </a>
                               </div>
                               <div class="banner-wrapper-infor">
                                 <div class="info">
                                   <div class="content">
-                                    <h3 class="title-banner">
-                                      Summer Collections
-                                    </h3>
+                                    <h3 class="title-banner">Summer Collections</h3>
                                     <div class="banner-image-description">
                                       Freshwater pearl necklace and earrings
                                     </div>
@@ -1000,15 +953,13 @@
                             <div class="banner-wrapper banners">
                               <div class="banner-image">
                                 <a href="/html/shop.html">
-                                  <img width="856" height="496" src="<?php echo base_url(''); ?>include/web/media/banner/banner-1-5.jpg" alt="Banner Image" />
+                                  <img width="856" height="496" src="<?php echo base_url(''); ?>include/web/media/banner/banner-1-5.jpg" alt="Banner Image">
                                 </a>
                               </div>
                               <div class="banner-wrapper-infor">
                                 <div class="info">
                                   <div class="content">
-                                    <h3 class="title-banner">
-                                      Make It Memorable
-                                    </h3>
+                                    <h3 class="title-banner"> Make It Memorable</h3>
                                     <div class="banner-image-description">
                                       Freshwater pearl necklace and earrings
                                     </div>
@@ -1044,21 +995,17 @@
                                     <div class="star star-5"></div>
                                   </div>
                                 </div>
-                                <h2 class="testimonial-title">
-                                  “Amazing Creatives”
-                                </h2>
+                                <h2 class="testimonial-title">“Amazing Creatives”</h2>
                                 <div class="testimonial-excerpt">
                                   Quality and product is premium and fit is awesome.
                                 </div>
                               </div>
                               <div class="testimonial-image image-position-top">
                                 <div class="thumbnail">
-                                  <img width="110" height="110" src="<?php echo base_url(''); ?>include/web/media/testimonial/1.jpg" alt="" />
+                                  <img width="110" height="110" src="<?php echo base_url(''); ?>include/web/media/testimonial/1.jpg" alt="">
                                 </div>
                                 <div class="testimonial-info">
-                                  <h2 class="testimonial-customer-name">
-                                    komal
-                                  </h2>
+                                  <h2 class="testimonial-customer-name">komal</h2>
                                 </div>
                               </div>
                             </div>
@@ -1071,21 +1018,17 @@
                                     <div class="star star-4"></div>
                                   </div>
                                 </div>
-                                <h2 class="testimonial-title">
-                                  “Stunning Design”
-                                </h2>
+                                <h2 class="testimonial-title">“Stunning Design”</h2>
                                 <div class="testimonial-excerpt">
                                   So Amazing....
                                 </div>
                               </div>
                               <div class="testimonial-image image-position-top">
                                 <div class="thumbnail">
-                                  <img width="110" height="110" src="<?php echo base_url(''); ?>include/web/media/testimonial/2.jpg" alt="" />
+                                  <img width="110" height="110" src="<?php echo base_url(''); ?>include/web/media/testimonial/2.jpg" alt="">
                                 </div>
                                 <div class="testimonial-info">
-                                  <h2 class="testimonial-customer-name">
-                                    Urvashi
-                                  </h2>
+                                  <h2 class="testimonial-customer-name">Urvashi</h2>
                                 </div>
                               </div>
                             </div>
@@ -1105,12 +1048,10 @@
                               </div>
                               <div class="testimonial-image image-position-top">
                                 <div class="thumbnail">
-                                  <img width="110" height="110" src="<?php echo base_url(''); ?>include/web/media/testimonial/3.jpg" alt="" />
+                                  <img width="110" height="110" src="<?php echo base_url(''); ?>include/web/media/testimonial/3.jpg" alt="">
                                 </div>
                                 <div class="testimonial-info">
-                                  <h2 class="testimonial-customer-name">
-                                    Garima
-                                  </h2>
+                                  <h2 class="testimonial-customer-name">Garima</h2>
                                 </div>
                               </div>
                             </div>
@@ -1123,21 +1064,17 @@
                                     <div class="star star-5"></div>
                                   </div>
                                 </div>
-                                <h2 class="testimonial-title">
-                                  “Stunning Design”
-                                </h2>
+                                <h2 class="testimonial-title">“Stunning Design”</h2>
                                 <div class="testimonial-excerpt">
                                   You just wear it...
                                 </div>
                               </div>
                               <div class="testimonial-image image-position-top">
                                 <div class="thumbnail">
-                                  <img width="110" height="110" src="<?php echo base_url(''); ?>include/web/media/testimonial/4.jpg" alt="" />
+                                  <img width="110" height="110" src="<?php echo base_url(''); ?>include/web/media/testimonial/4.jpg" alt="">
                                 </div>
                                 <div class="testimonial-info">
-                                  <h2 class="testimonial-customer-name">
-                                    Neha
-                                  </h2>
+                                  <h2 class="testimonial-customer-name">Neha</h2>
                                 </div>
                               </div>
                             </div>
@@ -1155,17 +1092,13 @@
                 <div class="block block-newsletter layout-2 one-col">
                   <div class="block-widget-wrap">
                     <div class="newsletter-title-wrap">
-                      <h2 class="newsletter-title">
-                        Latest From shinearium!
-                      </h2>
-                      <div class="newsletter-text">
-                        Sign-up to receive 10% off your next purchase. Plus hear about new arrivals and offers.
-                      </div>
+                      <h2 class="newsletter-title">Latest From shinearium!</h2>
+                      <div class="newsletter-text">Sign-up to receive 10% off your next purchase. Plus hear about new arrivals and offers.</div>
                     </div>
                     <form action="#" method="post" class="newsletter-form">
-                      <input type="email" name="your-email" value="" size="40" placeholder="Email address" />
+                      <input type="email" name="your-email" value="" size="40" placeholder="Email address">
                       <span class="btn-submit">
-                        <input type="submit" value="SUBSCRIBE" />
+                        <input type="submit" value="SUBSCRIBE">
                       </span>
                     </form>
                   </div>
@@ -1182,35 +1115,35 @@
                         <div class="item slick-slide">
                           <div class="item-image animation-horizontal">
                             <a href="/html/#">
-                              <img width="450" height="450" src="<?php echo base_url(''); ?>include/web/media/brand/1.jpg" alt="Brand 1" />
+                              <img width="450" height="450" src="<?php echo base_url(''); ?>include/web/media/brand/1.jpg" alt="Brand 1">
                             </a>
                           </div>
                         </div>
                         <div class="item slick-slide">
                           <div class="item-image animation-horizontal">
                             <a href="/html/#">
-                              <img width="450" height="450" src="<?php echo base_url(''); ?>include/web/media/brand/2.jpg" alt="Brand 2" />
+                              <img width="450" height="450" src="<?php echo base_url(''); ?>include/web/media/brand/2.jpg" alt="Brand 2">
                             </a>
                           </div>
                         </div>
                         <div class="item slick-slide">
                           <div class="item-image animation-horizontal">
                             <a href="/html/#">
-                              <img width="450" height="450" src="<?php echo base_url(''); ?>include/web/media/brand/3.jpg" alt="Brand 3" />
+                              <img width="450" height="450" src="<?php echo base_url(''); ?>include/web/media/brand/3.jpg" alt="Brand 3">
                             </a>
                           </div>
                         </div>
                         <div class="item slick-slide">
                           <div class="item-image animation-horizontal">
                             <a href="/html/#">
-                              <img width="450" height="450" src="<?php echo base_url(''); ?>include/web/media/brand/4.jpg" alt="Brand 4" />
+                              <img width="450" height="450" src="<?php echo base_url(''); ?>include/web/media/brand/4.jpg" alt="Brand 4">
                             </a>
                           </div>
                         </div>
                         <div class="item slick-slide">
                           <div class="item-image animation-horizontal">
                             <a href="/html/#">
-                              <img width="450" height="450" src="<?php echo base_url(''); ?>include/web/media/brand/5.jpg" alt="Brand 5" />
+                              <img width="450" height="450" src="<?php echo base_url(''); ?>include/web/media/brand/5.jpg" alt="Brand 5">
                             </a>
                           </div>
                         </div>
@@ -1239,36 +1172,23 @@
                     <div class="block-content">
                       <ul>
                         <li>
-                          <span>Head Office:</span>
-                          <a href="https://maps.app.goo.gl/rQSLBWx4SLCjnyfZ9" target="_blank">
-                            1113 Block B, New Ashok Nagar, New Delhi,110096
-                          </a>
+                          <span>Head Office:</span> <a href="https://maps.app.goo.gl/rQSLBWx4SLCjnyfZ9" target="_blank"> 1113 Block B, New Ashok Nagar, New Delhi,110096 </a>
                         </li>
                         <li>
-                          <span>Tel:</span>
-                          <a href="tel:8126456433;">8126456433</a>
+                          <span>Tel:</span> <a href="tel:8126456433;">8126456433</a>
                         </li>
                         <li>
-                          <span>Email:</span>
-                          <a href="mailto:support@shinearium.com;">support@shinearium.com</a>
+                          <span>Email:</span> <a href="mailto:support@shinearium.com;">support@shinearium.com</a>
                         </li>
                       </ul>
                     </div>
                   </div>
                   <div class="block block-social">
                     <ul class="social-link">
-                      <li>
-                        <a href="javascript:void(0)"><i class="fa fa-twitter"></i></a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)"><i class="fa fa-instagram"></i></a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)"><i class="fa fa-dribbble"></i></a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)"><i class="fa fa-behance"></i></a>
-                      </li>
+                      <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="javascript:void(0)"><i class="fa fa-instagram"></i></a></li>
+                      <li><a href="javascript:void(0)"><i class="fa fa-dribbble"></i></a></li>
+                      <li><a href="javascript:void(0)"><i class="fa fa-behance"></i></a></li>
                     </ul>
                   </div>
                 </div>
@@ -1350,15 +1270,13 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="footer-left">
-                    <p class="copyright">
-                      Copyright © 2023. All Right Reserved
-                    </p>
+                    <p class="copyright">Copyright © 2023. All Right Reserved</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="footer-right">
                     <div class="block block-image">
-                      <img width="309" height="32" src="<?php echo base_url(''); ?>include/web/media/payments.png" alt="" />
+                      <img width="309" height="32" src="<?php echo base_url(''); ?>include/web/media/payments.png" alt="">
                     </div>
                   </div>
                 </div>
@@ -1383,7 +1301,7 @@
           <button id="searchsubmit" class="btn" type="submit">
             <i class="icon-search"></i>
           </button>
-          <input type="text" autocomplete="off" value="" name="s" class="input-search s" placeholder="Search..." />
+          <input type="text" autocomplete="off" value="" name="s" class="input-search s" placeholder="Search...">
           <div class="content-menu_search">
             <label>Suggested</label>
             <ul id="menu_search" class="menu">
@@ -1413,7 +1331,7 @@
                 <td class="wishlist-item-remove"><span></span></td>
                 <td class="wishlist-item-image">
                   <a href="/html/shop-details.html">
-                    <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/3.jpg" alt="" />
+                    <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/3.jpg" alt="">
                   </a>
                 </td>
                 <td class="wishlist-item-info">
@@ -1426,7 +1344,9 @@
                   <div class="wishlist-item-time">June 4, 2022</div>
                 </td>
                 <td class="wishlist-item-actions">
-                  <div class="wishlist-item-stock">In stock</div>
+                  <div class="wishlist-item-stock">
+                    In stock
+                  </div>
                   <div class="wishlist-item-add">
                     <div data-title="Add to cart">
                       <a rel="nofollow" href="#">Add to cart</a>
@@ -1438,7 +1358,7 @@
                 <td class="wishlist-item-remove"><span></span></td>
                 <td class="wishlist-item-image">
                   <a href="/html/shop-details.html">
-                    <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/4.jpg" alt="" />
+                    <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/4.jpg" alt="">
                   </a>
                 </td>
                 <td class="wishlist-item-info">
@@ -1452,7 +1372,9 @@
                   <div class="wishlist-item-time">June 4, 2022</div>
                 </td>
                 <td class="wishlist-item-actions">
-                  <div class="wishlist-item-stock">In stock</div>
+                  <div class="wishlist-item-stock">
+                    In stock
+                  </div>
                   <div class="wishlist-item-add">
                     <div data-title="Add to cart">
                       <a rel="nofollow" href="#">Add to cart</a>
@@ -1472,9 +1394,7 @@
               Continue shopping
             </span>
           </div>
-          <div class="wishlist-notice wishlist-notice-show">
-            Added to the wishlist!
-          </div>
+          <div class="wishlist-notice wishlist-notice-show">Added to the wishlist!</div>
         </div>
       </div>
     </div>
@@ -1495,16 +1415,13 @@
                     <a href="/html/#" class="compare-table-settings">Settings</a>
                   </th>
                   <th>
-                    <a href="/html/shop-details.html">Twin Hoops</a>
-                    <span class="remove">remove</span>
+                    <a href="/html/shop-details.html">Twin Hoops</a> <span class="remove">remove</span>
                   </th>
                   <th>
-                    <a href="/html/shop-details.html">Medium Flat Hoops</a>
-                    <span class="remove">remove</span>
+                    <a href="/html/shop-details.html">Medium Flat Hoops</a> <span class="remove">remove</span>
                   </th>
                   <th>
-                    <a href="/html/shop-details.html">Bold Pearl Hoop Earrings</a>
-                    <span class="remove">remove</span>
+                    <a href="/html/shop-details.html">Bold Pearl Hoop Earrings</a> <span class="remove">remove</span>
                   </th>
                 </tr>
               </thead>
@@ -1513,17 +1430,17 @@
                   <td class="td-label">Image</td>
                   <td>
                     <a href="/html/shop-details.html">
-                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/3.jpg" alt="" />
+                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/3.jpg" alt="">
                     </a>
                   </td>
                   <td>
                     <a href="/html/shop-details.html">
-                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/1.jpg" alt="" />
+                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/1.jpg" alt="">
                     </a>
                   </td>
                   <td>
                     <a href="/html/shop-details.html">
-                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/2.jpg" alt="" />
+                      <img width="600" height="600" src="<?php echo base_url(''); ?>include/web/media/product/2.jpg" alt="">
                     </a>
                   </td>
                 </tr>
@@ -1537,12 +1454,12 @@
                   <td class="td-label">Rating</td>
                   <td>
                     <div class="star-rating">
-                      <span style="width: 80%;"></span>
+                      <span style="width:80%"></span>
                     </div>
                   </td>
                   <td>
                     <div class="star-rating">
-                      <span style="width: 100%;"></span>
+                      <span style="width:100%"></span>
                     </div>
                   </td>
                   <td></td>
@@ -1550,10 +1467,7 @@
                 <tr class="tr-price">
                   <td class="td-label">Price</td>
                   <td><span class="amount">$150.00</span></td>
-                  <td>
-                    <del><span class="amount">$150.00</span></del>
-                    <ins><span class="amount">$100.00</span></ins>
-                  </td>
+                  <td><del><span class="amount">$150.00</span></del> <ins><span class="amount">$100.00</span></ins></td>
                   <td><span class="amount">$200.00</span></td>
                 </tr>
                 <tr class="tr-add-to-cart">
@@ -1576,45 +1490,15 @@
                 </tr>
                 <tr class="tr-description">
                   <td class="td-label">Description</td>
-                  <td>
-                    Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna
-                    posuere eget.
-                  </td>
-                  <td>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                  </td>
-                  <td>
-                    The EcoSmart Fleece Hoodie full-zip hooded jacket provides medium weight fleece comfort all year around. Feel better in this sweatshirt because Hanes keeps plastic bottles of landfills by using
-                    recycled polyester.7.8 ounce fleece sweatshirt made with up to 5 percent polyester created from recycled plastic.
-                  </td>
+                  <td>Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ultricies tellus sodales eu. Donec dignissim viverra nunc, ut aliquet magna posuere eget.</td>
+                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</td>
+                  <td>The EcoSmart Fleece Hoodie full-zip hooded jacket provides medium weight fleece comfort all year around. Feel better in this sweatshirt because Hanes keeps plastic bottles of landfills by using recycled polyester.7.8 ounce fleece sweatshirt made with up to 5 percent polyester created from recycled plastic.</td>
                 </tr>
                 <tr class="tr-content">
                   <td class="td-label">Content</td>
-                  <td>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-                    ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
-                    magnam aliquam quaerat voluptatem.
-                  </td>
-                  <td>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-                    ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
-                    magnam aliquam quaerat voluptatem.
-                  </td>
-                  <td>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-                    ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
-                    magnam aliquam quaerat voluptatem.
-                  </td>
+                  <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</td>
+                  <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</td>
+                  <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</td>
                 </tr>
                 <tr class="tr-dimensions">
                   <td class="td-label">Dimensions</td>
@@ -1646,13 +1530,13 @@
                         <div class="slick-wrap">
                           <div class="slick-sliders image-additional" data-dots="true" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="1" data-columns="1" data-nav="true">
                             <div class="img-thumbnail slick-slide">
-                              <a href="/html<?php echo base_url(''); ?>include/web/media/product/3.jpg" class="image-scroll" title="">
-                                <img width="900" height="900" src="<?php echo base_url(''); ?>include/web/media/product/3.jpg" alt="" />
+                              <a href="/html/media/product/3.jpg" class="image-scroll" title="">
+                                <img width="900" height="900" src="<?php echo base_url(''); ?>include/web/media/product/3.jpg" alt="">
                               </a>
                             </div>
                             <div class="img-thumbnail slick-slide">
-                              <a href="/html<?php echo base_url(''); ?>include/web/media/product/3-2.jpg" class="image-scroll" title="">
-                                <img width="900" height="900" src="<?php echo base_url(''); ?>include/web/media/product/3-2.jpg" alt="" />
+                              <a href="/html/media/product/3-2.jpg" class="image-scroll" title="">
+                                <img width="900" height="900" src="<?php echo base_url(''); ?>include/web/media/product/3-2.jpg" alt="">
                               </a>
                             </div>
                           </div>
@@ -1673,25 +1557,21 @@
                   </div>
                   <div class="product-rating">
                     <div class="star-rating" role="img" aria-label="Rated 4.00 out of 5">
-                      <span style="width: 80%;">Rated <strong class="rating">4.00</strong> out of 5 based on <span class="rating">1</span> customer rating</span>
+                      <span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5 based on <span class="rating">1</span> customer rating</span>
                     </div>
                     <a href="/html/#" class="review-link">(<span class="count">1</span> customer review)</a>
                   </div>
                   <div class="description">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…
-                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…</p>
                   </div>
                   <form class="cart" method="post" enctype="multipart/form-data">
                     <div class="quantity-button">
                       <div class="quantity">
                         <button type="button" class="plus">+</button>
-                        <input type="number" class="input-text qty text" step="1" min="1" max="" name="quantity" value="1" title="Qty" size="4" placeholder="" inputmode="numeric" autocomplete="off" />
+                        <input type="number" class="input-text qty text" step="1" min="1" max="" name="quantity" value="1" title="Qty" size="4" placeholder="" inputmode="numeric" autocomplete="off">
                         <button type="button" class="minus">-</button>
                       </div>
-                      <button type="submit" class="single-add-to-cart-button button alt">
-                        Add to cart
-                      </button>
+                      <button type="submit" class="single-add-to-cart-button button alt">Add to cart</button>
                     </div>
                     <button class="button quick-buy">Buy It Now</button>
                   </form>
@@ -1710,20 +1590,17 @@
     <a href="/html/#" class="newsletter-close"></a>
     <div class="newsletter-container">
       <div class="newsletter-img">
-        <img src="<?php echo base_url(''); ?>include/web/media/banner/newsletter-popup.jpg" alt="" />
+        <img src="<?php echo base_url(''); ?>include/web/media/banner/newsletter-popup.jpg" alt="">
       </div>
       <div class="newsletter-form">
         <form action="#" method="post">
           <div class="newsletter-title">
-            <div class="title">
-              Get<br />
-              free shipping
-            </div>
+            <div class="title">Get<br> free shipping</div>
             <div class="sub-title">on your first order. Offer ends soon.</div>
           </div>
           <div class="newsletter-input clearfix">
-            <input type="email" name="your-email" size="40" class="form-control" placeholder="Enter Your Email ..." />
-            <input type="submit" value="Subscribe" class="form-control" />
+            <input type="email" name="your-email" size="40" class="form-control" placeholder="Enter Your Email ...">
+            <input type="submit" value="Subscribe" class="form-control">
           </div>
           <div class="newsletter-no">no thanks !</div>
         </form>
@@ -1742,7 +1619,7 @@
   <script src="<?php echo base_url(''); ?>include/web/libs/jquery/js/jquery.min.js"></script>
   <script src="<?php echo base_url(''); ?>include/web/libs/bootstrap/js/bootstrap.min.js"></script>
   <script src="<?php echo base_url(''); ?>include/web/libs/slick/js/slick.min.js"></script>
-  <script src="<?php echo base_url('') ?>/mmenu/js/jquery.mmenu.all.min.js"></script>
+  <script src="<?php echo base_url(''); ?>include/web/libs/mmenu/js/jquery.mmenu.all.min.js"></script>
   <!-- Site Scripts -->
   <script src="<?php echo base_url(''); ?>include/web/assets/js/app.js"></script>
 </body>
