@@ -11,7 +11,8 @@ class Admin extends CI_Controller {
         date_default_timezone_set('Asia/Kolkata');
         $this->load->model('Shinearium_Model');
     }
-    public function index() {
+    public function index() 
+    {
         if ($this->session->userdata('admin_login') == 'yes') {
             $data['page_name'] = 'dashboard';
             $this->load->view('admin/index', $data);
@@ -20,7 +21,8 @@ class Admin extends CI_Controller {
             $this->load->view('admin/login', $data);
         }
     }
-    public function product($param1 = 'list', $param2 = 'insert') {
+    public function product($param1 = 'list', $param2 = 'insert') 
+    {
         if ($this->session->userdata('admin_login') == 'yes') {
             if ($param1 == 'upload') {
                 $data['page_name'] = 'product-upload';
@@ -428,9 +430,9 @@ class Admin extends CI_Controller {
             $this->load->view('admin/login', $data);
         }
     }
-    public function category($param1 = 'list', $param2 = 'insert') {
-        if ($param1 == 'child') {
-            
+    public function category($param1 = 'list', $param2 = 'insert') 
+    {
+        if ($param1 == 'child') {           
             $parent_id = $this->input->post('id');
             if ($parent_id) {
                 $child_category = $this->Category_Model->get_child_category($parent_id);
@@ -452,41 +454,48 @@ class Admin extends CI_Controller {
         } else if ($param1 == 'save') {
             if ($param2 == 'edit') {
                 if ($this->input->post('submit')) {
-                    $data['title'] = $this->input->post('title');
-                    $data['slug'] = url_title($data['title'], 'dash', true);
-                    if ($this->Category_Model->get_data_by_category_slug($data['slug'], $this->input->post('category_id'))) {
-                        $this->session->set_flashdata('error', 'Please change title, Title already exist!');
-                        redirect('admin/category/edit/' . $this->input->post('category_id'), 'refresh');
-                    }
-                    $data['parent_category_id'] = $this->input->post('sub_category');
-                    $data['ip_address'] = $this->ip_address;
-                    if (!empty($_FILES['category_thumbnail']['tmp_name'])) {
-                        $config['upload_path'] = './uploads/category_thumbnail/';
-                        $config['max_size'] = '500';
-                        $config['max_width'] = 300;
-                        $config['max_height'] = 400;
-                        $config['allowed_types'] = 'jpg|png|jpeg';
-                        $this->upload->initialize($config);
-                        $this->load->library('upload', $config);
-                        $this->upload->initialize($config);
-                        $this->load->library('upload', $config);
-                        if ($this->upload->do_upload('category_thumbnail')) {
-                            $uploadData = $this->upload->data();
-                            $data['category_thumbnail'] = $uploadData['raw_name'] . $uploadData['file_ext'];
-                            $response = $this->db->where('category_id', $this->input->post('category_id'))->update('categories', $data);
-                            if ($response) {
-                                $this->session->set_flashdata('success', 'Category successfully updated.');
-                                redirect('admin/category');
+                    if ($this->input->post('submit')) {
+                        $data['title'] = $this->input->post('title');
+                        $data['slug'] = url_title($data['title'], 'dash', true);
+                        $data['display_in_order'] = $this->input->post('display_in_order');
+                        // Check if a category with the same slug already exists and exclude the current category
+                        if ($this->Category_Model->get_data_by_category_slug($data['slug'], $this->input->post('category_id'))) {
+                            $this->session->set_flashdata('error', 'Please change the title; a category with the same title already exists.');
+                            redirect('admin/category/edit/' . $this->input->post('category_id'), 'refresh');
+                            return; // Exit the function
+                        }
+                        $data['parent_category_id'] = $this->input->post('category');
+                        $data['ip_address'] = $this->ip_address;
+                        // Handle category_thumbnail upload only if submitted
+                        if (!empty($_FILES['category_thumbnail']['tmp_name'])) {
+                            $config['upload_path'] = './uploads/category_thumbnail/';
+                            $config['max_size'] = '500';
+                            $config['max_width'] = 300;
+                            $config['max_height'] = 400;
+                            $config['allowed_types'] = 'jpg|png|jpeg';
+
+                            $this->load->library('upload', $config);
+
+                            if ($this->upload->do_upload('category_thumbnail')) {
+                                $uploadData = $this->upload->data();
+                                $data['category_thumbnail'] = $uploadData['raw_name'] . $uploadData['file_ext'];
                             } else {
-                                 $this->session->set_flashdata('error', 'Failed to update category.');
-                                 redirect('admin/category');
+                                $this->session->set_flashdata('error', 'Failed to upload category thumbnail.');
+                                redirect('admin/category/edit/' . $this->input->post('category_id'));
+                                return; // Exit the function
                             }
                         }
-                        else
-                        {
-                          $this->session->set_flashdata('error', 'Failed to save category.');
-                          redirect('admin/category');  
+
+                        // Update the category data in the database
+                        $response = $this->db->where('category_id', $this->input->post('category_id'))->update('categories', $data);
+
+                        if ($response) {
+                            $this->session->set_flashdata('success', 'Category successfully updated.');
+                        } else {
+                            $this->session->set_flashdata('error', 'Failed to update category.');
                         }
+
+                        redirect('admin/category');
                     }
                 }
             } else {
@@ -535,7 +544,7 @@ class Admin extends CI_Controller {
                 $temp = array(
                     'category_id' => $row['category_id'],
                     'title' => $row['title'],
-                    'display_in_order'=>$row['display_in_order'],
+                    'display_in_order' => $row['display_in_order'],
                     'created_at' => date("M d Y h:i A", strtotime($row['created_at']))
                 );
                 // Check if the 'category_thumbnail' key exists in $row
@@ -545,8 +554,20 @@ class Admin extends CI_Controller {
                     // Handle the case where 'category_thumbnail' is not present
                     $temp['category_thumbnail'] = 'default_thumbnail.jpg'; // Provide a default value or handle as needed
                 }
+
+                // Check if parent_category_id is 0
+                if ($row['parent_category_id'] == 0) {
+                    // Main category, set the category name as "Main Category"
+                    $temp['category_name'] = 'Main Category';
+                } else {
+                    // Sub-category, fetch the category name from the database or handle as needed
+                    $subCategory = $this->Category_Model->get_category_by_id($row['parent_category_id']);
+                    $temp['category_name'] = $subCategory->title; // Assuming 'title' is the category name field
+                }
+
                 array_push($final_data, $temp);
             }
+
             $data['list'] = $final_data;
             $data['page_name'] = 'category';
             $this->load->view('admin/index', $data);

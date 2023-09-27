@@ -60,42 +60,34 @@
                      </thead>
                      <tbody>
                         <?php
-                        if (
-                           count($list) >
-                           0
-                        ) {
-                           foreach ($list as $row) {                              
-                              echo '
-                                <tr>
-                                    <td>' . ($row['title'] ? $row['title'] : 'N/A') . '</td>
-                                    <td>' . ($row['category_thumbnail'] ? 'Yes' : 'No') . '</td>
-                                    <td>
-                                        ';
+                        if (count($list) > 0) {
+                           foreach ($list as $row) {
+                              echo '<tr>
+                           <td>' . (isset($row['title']) ? $row['title'] : 'N/A') . '</td>
+                           <td>' . (isset($row['category_name']) ? $row['category_name'] : 'N/A') . '</td>
+                           <td>';
                               if (!empty($row['category_thumbnail'])) {
                                  echo '<img style="height: auto; width: 100px;" src="' . base_url('uploads/category_thumbnail/') . $row['category_thumbnail'] . '" />';
                               } else {
                                  echo 'No Image';
                               }
-                              echo '
-                                    </td>
-                                    <td>' . ($row['display_in_order'] ? $row['display_in_order'] : 'N/A') . '</td>
-                                    <td>' . ($row['created_at'] ? $row['created_at'] : 'N/A') . '</td>
-                                    <td>
-                                        <a class="btn btn-sm" href="' . base_url('admin/category/edit/') . $row['category_id'] . '">
-                                            <i class="fas fa-edit text-success"></i>
-                                            Edit
-                                        </a>
-                                    </td>
-                                </tr>
-                                ';
+                              echo '</td>
+                           <td>' . (isset($row['display_in_order']) ? $row['display_in_order'] : 'N/A') . '</td>
+                           <td>' . (isset($row['created_at']) ? $row['created_at'] : 'N/A') . '</td>
+                           <td>
+                           <a class="btn btn-sm" href="' . base_url('admin/category/edit/') . $row['category_id'] . '">
+                           <i class="fas fa-edit text-success"></i>
+                           Edit
+                           </a>
+                           </td>
+                           </tr>';
                            }
                         } else {
-                           echo '
-                                <tr>
-                                    <td colspan="5" class="text-center">No matching record(s) found.</td>
-                                </tr>
-                                ';
-                        } ?>
+                           echo '<tr>
+                           <td colspan="6" class="text-center">No matching record(s) found.</td>
+                           </tr>';
+                        }
+                        ?>
                      </tbody>
                      <tfoot>
                         <tr>
