@@ -44,7 +44,7 @@
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 header-center">
                 <div class="site-logo">
                   <a href="/index.html">
-                    <img width="400" height="79" src="/media/shinearium-logo.png" alt="Shinearium – Jewelry Store" />
+                    <img width="400" height="79" src="<?php echo base_url(''); ?>include/web/media/shinearium-logo.png" alt="Shinearium – Jewelry Store" />
                   </a>
                 </div>
               </div>
@@ -137,7 +137,7 @@
                 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 header-left">
                   <div class="site-logo">
                     <a href="/index.html">
-                      <img width="400" height="140" src="/media/shinearium-logo.png" alt="shinearium – Jewelry Store" />
+                      <img width="400" height="140" src="<?php echo base_url(''); ?>include/web/media/shinearium-logo.png" alt="shinearium – Jewelry Store" />
                     </a>
                   </div>
                 </div>
