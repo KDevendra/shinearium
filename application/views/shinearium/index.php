@@ -1731,12 +1731,12 @@
     </div>
   </div>
   <!-- Page Loader -->
-  <div class="page-preloader">
+  <!-- <div class="page-preloader">
     <div class="loader">
       <div></div>
       <div></div>
     </div>
-  </div>
+  </div> -->
   <!-- Dependency Scripts -->
   <script src="<?php echo base_url(''); ?>include/web/libs/popper/js/popper.min.js"></script>
   <script src="<?php echo base_url(''); ?>include/web/libs/jquery/js/jquery.min.js"></script>
