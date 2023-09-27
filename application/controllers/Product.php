@@ -20,14 +20,14 @@ class Product extends CI_Controller {
                     $this->product_list($slug);
                 }               
             } else {
-                $data['title'] = "Home |  Web Flowmechs";
+                $data['title'] = "Home |  Shinearium";
                 $data['keywords'] = "";
                 $data['desc'] = "";
                 $data['menu'] = "home";
                 $this->load->view('index', $data);
             }
         } else {
-            $data['title'] = "Home |  Web Flowmechs";
+            $data['title'] = "Home |  Shinearium";
             $data['keywords'] = "";
             $data['desc'] = "";
             $data['menu'] = "home";
@@ -54,18 +54,18 @@ class Product extends CI_Controller {
                 $data['parent_category'] = $parent_category;
                 $data['child_category'] = $menu_child_category;
                 $data['product_data'] = $product_listing;
-                $data['title'] = $category_details->title . " | Web Flowmechs";
+                $data['title'] = $category_details->title . " | Shinearium";
                 $data['keywords'] = "";
                 $data['desc'] = "";
                 $this->load->view('product/product-index', $data);
             } else {
-                $data['title'] = "Home |  Web Flowmechs";
+                $data['title'] = "Home |  Shinearium";
                 $data['keywords'] = "";
                 $data['desc'] = "";
                 $this->load->view('index', $data);
             }
         } else {
-            $data['title'] = "Home |  Web Flowmechs";
+            $data['title'] = "Home |  Shinearium";
             $data['keywords'] = "";
             $data['desc'] = "";
             $this->load->view('index', $data);
@@ -100,14 +100,14 @@ class Product extends CI_Controller {
             $data['sub_category'] = $sub_category;
             $data['sub_sub_category'] = $sub_sub_category;
             $data['related_products'] = $related_products;
-            $data['title'] = $product_details->title . " | Web Flowmechs";
+            $data['title'] = $product_details->title . " | Shinearium";
             $data['keywords'] = "";
             $data['desc'] = "";
             $data['menu'] = $category->slug;
             $data['child_category'] = $parent_category_id;
             $this->load->view('product/product-details', $data);
         } else {
-            $data['title'] = "Home |  Web Flowmechs";
+            $data['title'] = "Home |  Shinearium";
             $data['keywords'] = "";
             $data['desc'] = "";
             $this->load->view('index', $data);
@@ -123,7 +123,7 @@ class Product extends CI_Controller {
             $data['category'] = $category;
             $data['sub_category'] = $sub_category;
             $data['sub_sub_category'] = $sub_sub_category;
-            $data['title'] = $product_details->title . " | Web Flowmechs";
+            $data['title'] = $product_details->title . " | Shinearium";
             $data['keywords'] = "";
             $data['desc'] = "";
             // $this->load->view('product/product-pdf', $data);

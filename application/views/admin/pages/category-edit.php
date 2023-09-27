@@ -69,7 +69,7 @@
                         </div>
                        	<div class="col-md-6">
 									<div class="form-group">
-										<label for="sub_category">Category Thumbnail  <span class="text-danger"><b>(Note:- Width:300px, Height:400px, File Max Size 250KB)</b></span></label>
+										<label for="sub_category">Category Thumbnail  <span class="text-danger"><small>(Note:- Width:300px, Height:400px, File Max Size 250KB)</small></span></label>
 										<input type="file" class="form-control" name="category_thumbnail">
 									</div>
 								</div>

@@ -8,7 +8,7 @@
          </div>
          <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-               <li class="breadcrumb-item"><a href="/Web Flowmechs/index.php/admin">Dashboard</a></li>
+               <li class="breadcrumb-item"><a href="/Shinearium/index.php/admin">Dashboard</a></li>
                <li class="breadcrumb-item active">Product Support Enquiry </li>
             </ol>
          </div>

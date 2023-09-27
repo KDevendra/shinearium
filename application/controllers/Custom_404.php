@@ -4,7 +4,7 @@ class Custom_404 extends CI_controller
 {
   public function index()
   {
-    $data['title']="Home | Web Flowmechs";
+    $data['title']="Home | Shinearium";
     $data['keywords']="";
     $data['desc']="";
     $data['menu']="home";

@@ -36,4 +36,5 @@ class SerialNumber_Model extends CI_Model
 		$data = $this->db->query('SELECT serial_number, model_name FROM serial_numbers')->result_array();
 	  	return $data;
 	}
+	
 }

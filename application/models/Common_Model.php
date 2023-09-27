@@ -8,58 +8,12 @@ class Common_Model extends CI_Model
         if (!isset($this->db)) {
             $this->load->database();
         }
-        // $this->load->library('upload');
     }
     function clear_cache()
     {
         $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
         $this->output->set_header('Pragma: no-cache');
     }
-    // function upload_file($file, $feild, $path, $filename)
-    // {
-    // 	if (empty($file['name']) || !file_exists($file['tmp_name']) || !is_uploaded_file($file['tmp_name']))
-    // 	{
-    // 		return json_encode(['status' => false, 'message' => 'File not selected!']);
-    // 	}
-    // 	$ext = '.' . pathinfo($file['name'], PATHINFO_EXTENSION);
-    // 	$file_name = $filename.'-'.time().$ext;
-    // 	// Set preference
-    // 	$config['upload_path'] = $path;
-    // 	$config['allowed_types'] = 'jpg|jpeg|png';
-    // 	$config['max_size'] = '2048'; // max_size in kb
-    // 	$config['file_name'] = $file_name;
-    // 	$config['encrypt_name'] = FALSE;
-    // 	// initialize upload config
-    // 	$this->upload->initialize($config);
-    // 	if (!$this->upload->do_upload($feild))
-    //     {
-    //         return json_encode(['status' => false, 'message' => $this->upload->display_errors()]);
-    //     }
-    //     else
-    //     {
-    //         $data = $this->upload->data();
-    // 		return json_encode(['status' => true, 'message' => 'File successfully uploaded!', 'file_path' => base_url($path).$data["file_name"], 'file_name' => $data["file_name"]]);
-    //     }
-    // }
-    // function delete_file($filepath)
-    // {
-    // 	if(file_exists($filepath))
-    // 	{
-    // 		$response = unlink($filepath);
-    // 		if($response)
-    // 		{
-    // 			return json_encode(['status' => true, 'status_code' => '200', 'message' => 'File successfully deleted.']);
-    // 		}
-    // 		else
-    // 		{
-    // 			return json_encode(['status' => false, 'status_code' => '302', 'message' => 'Failed to delete file.']);
-    // 		}
-    // 	}
-    // 	else
-    // 	{
-    // 		return json_encode(['status' => false, 'status_code' => '302', 'message' => 'File not found']);
-    // 	}
-    // }
     function upload_file($file, $feild, $path, $filename)
     {
         if (empty($file['name']) || !file_exists($file['tmp_name']) || !is_uploaded_file($file['tmp_name'])) {

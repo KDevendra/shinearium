@@ -18,25 +18,25 @@
       <div class="row">
          <div class="col-12">
             <?php if ($this->session->flashdata('success')) { ?>
-            <div class="card-body">
-               <div class="alert alert-success alert-dismissible show" role="alert">
-                  <?php echo $this->session->flashdata('success') ?>
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
+               <div class="card-body">
+                  <div class="alert alert-success alert-dismissible show" role="alert">
+                     <?php echo $this->session->flashdata('success') ?>
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
                </div>
-            </div>
             <?php } ?>
             <?php if ($this->session->flashdata('error')) { ?>
-            <div class="card-body">
-               <div class="alert alert-danger alert-dismissible show" role="alert">
-                  <?php echo $this->session->flashdata('error') ?>
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
+               <div class="card-body">
+                  <div class="alert alert-danger alert-dismissible show" role="alert">
+                     <?php echo $this->session->flashdata('error') ?>
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
                </div>
-            </div>
-            <?php } ?>	
+            <?php } ?>
             <div class="card">
                <div class="card-body">
                   <a href="<?php echo base_url('admin/category/add'); ?>" type="button" class="btn bg-gradient-success btn-sm">Add New</a>
@@ -53,37 +53,56 @@
                            <th>Category</th>
                            <th>Parent Categories</th>
                            <th>Category Thumbnail</th>
+                           <th>Display In Order </th>
                            <th>Created At</th>
                            <th>Action</th>
                         </tr>
                      </thead>
                      <tbody>
                         <?php
-                           if(count($list) > 0){
-                           	foreach($list as $row){
-                           		echo '<tr>
-                           				<td>'.$row['title'].'</td>
-                           				<td>No</td>
-                           				<td><img style="height: auto;width: 100px;" src="'.base_url('uploads/category_thumbnail/').$row['category_thumbnail'].'"></td>
-                           				<td>'.$row['created_at'].'</td>
-                           				<td>
-                           					<a class="btn btn-sm" href="'.base_url('admin/category/edit/').$row['category_id'].'"> 
-                           						<i class="fas fa-edit text-success"></i> 
-                           						Edit
-                           					</a>
-                           				</td>
-                           			</tr>';
-                           	}
-                           }else{
-                           	echo '<tr><td colspan="5" class="text-center">No matching record(s) found.</td></tr>';
+                        if (
+                           count($list) >
+                           0
+                        ) {
+                           foreach ($list as $row) {                              
+                              echo '
+                                <tr>
+                                    <td>' . ($row['title'] ? $row['title'] : 'N/A') . '</td>
+                                    <td>' . ($row['category_thumbnail'] ? 'Yes' : 'No') . '</td>
+                                    <td>
+                                        ';
+                              if (!empty($row['category_thumbnail'])) {
+                                 echo '<img style="height: auto; width: 100px;" src="' . base_url('uploads/category_thumbnail/') . $row['category_thumbnail'] . '" />';
+                              } else {
+                                 echo 'No Image';
+                              }
+                              echo '
+                                    </td>
+                                    <td>' . ($row['display_in_order'] ? $row['display_in_order'] : 'N/A') . '</td>
+                                    <td>' . ($row['created_at'] ? $row['created_at'] : 'N/A') . '</td>
+                                    <td>
+                                        <a class="btn btn-sm" href="' . base_url('admin/category/edit/') . $row['category_id'] . '">
+                                            <i class="fas fa-edit text-success"></i>
+                                            Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                ';
                            }
-                           ?>					
+                        } else {
+                           echo '
+                                <tr>
+                                    <td colspan="5" class="text-center">No matching record(s) found.</td>
+                                </tr>
+                                ';
+                        } ?>
                      </tbody>
                      <tfoot>
                         <tr>
                            <th>Category</th>
                            <th>Parent Categories</th>
                            <th>Category Thumbnail</th>
+                           <th>Display In Order</th>
                            <th>Created At</th>
                            <th>Action</th>
                         </tr>

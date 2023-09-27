@@ -9,7 +9,7 @@ class Admin extends CI_Controller {
         }
         $this->ip_address = $this->Common_Model->get_ip_address();
         date_default_timezone_set('Asia/Kolkata');
-        $this->load->model('Web_Flowmechs_Model');
+        $this->load->model('Shinearium_Model');
     }
     public function index() {
         if ($this->session->userdata('admin_login') == 'yes') {
@@ -33,7 +33,7 @@ class Admin extends CI_Controller {
                 $data['image_crop_js'] = 'yes';
                 // $data['serial_numbers'] = $this->SerialNumber_Model->get_serial_for_dropdown();
                 $data['parent_category'] = $this->Category_Model->get_parent_category();
-                // $orderby_data = $this->Web_Flowmechs_Model->getMaxOrderBy('products');
+                // $orderby_data = $this->Shinearium_Model->getMaxOrderBy('products');
                 // $data['order_by'] = $orderby_data->orderby;
                 $this->load->view('admin/index', $data);
             } else if ($param1 == 'edit') {
@@ -447,8 +447,6 @@ class Admin extends CI_Controller {
             $data['page_name'] = 'category-edit';
             $data['js_page_name'] = 'category-add';
             $data['c_data'] = $this->Category_Model->get_category_by_id($param2);
-            // $data['sub_category'] = $this->Category_Model->get_category_by_id($data['c_data']->parent_category_id);
-            // $data['sub_categories'] = $this->Category_Model->get_child_category($data['sub_category']->parent_category_id);
             $data['parent_category'] = $this->Category_Model->get_parent_category();
             $this->load->view('admin/index', $data);
         } else if ($param1 == 'save') {
@@ -465,8 +463,8 @@ class Admin extends CI_Controller {
                     if (!empty($_FILES['category_thumbnail']['tmp_name'])) {
                         $config['upload_path'] = './uploads/category_thumbnail/';
                         $config['max_size'] = '500';
-                        // $config['max_width'] = 300;
-                        // $config['max_height'] = 400;
+                        $config['max_width'] = 300;
+                        $config['max_height'] = 400;
                         $config['allowed_types'] = 'jpg|png|jpeg';
                         $this->upload->initialize($config);
                         $this->load->library('upload', $config);
@@ -495,51 +493,58 @@ class Admin extends CI_Controller {
                 if ($this->input->post('submit')) {
                     $data['title'] = $this->input->post('title');
                     $data['slug'] = url_title($data['title'], 'dash', true);
+                    $data['display_in_order'] = $this->input->post('display_in_order');
+                    // Check if a category with the same slug already exists
                     if ($this->Category_Model->get_data_by_category_slug($data['slug'])) {
-                        $this->session->set_flashdata('error', 'Please change title, Title already exist!');
-                        redirect('admin/category/add/', 'refresh');
-                    }
-                    $data['parent_category_id'] = $this->input->post('sub_category');
-                    $data['ip_address'] = $this->ip_address;
-                    if (!empty($_FILES['category_thumbnail']['tmp_name'])) {
-                        $config['upload_path'] = './uploads/category_thumbnail/';
-                        $config['max_size'] = '500';
-                        // $config['max_width'] = 300;
-                        // $config['max_height'] = 400;
-                        $config['allowed_types'] = 'jpg|png|jpeg';
-                        $this->upload->initialize($config);
-                        $this->load->library('upload', $config);
-                        $this->upload->initialize($config);
-                        $this->load->library('upload', $config);
-                        if ($this->upload->do_upload('category_thumbnail')) {
-                            $uploadData = $this->upload->data();
-                            $data['category_thumbnail'] = $uploadData['raw_name'] . $uploadData['file_ext'];
-                            $response = $this->db->insert('categories', $data);
-                            if ($response) {
-                                $this->session->set_flashdata('success', 'Category successfully added.');
-                                redirect('admin/category');
+                        $this->session->set_flashdata('error', 'Please change the title, A category with the same title already exists.');
+                    } else {
+                        $data['parent_category_id'] = $this->input->post('sub_category');
+                        $data['ip_address'] = $this->ip_address;
+                        // Handle category thumbnail upload
+                        if (!empty($_FILES['category_thumbnail']['tmp_name'])) {
+                            $config['upload_path'] = './uploads/category_thumbnail/';
+                            $config['max_size'] = '500';
+                            $config['max_width'] = 300;
+                            $config['max_height'] = 400;
+                            $config['allowed_types'] = 'jpg|png|jpeg';
+                            $this->load->library('upload', $config);
+                            if ($this->upload->do_upload('category_thumbnail')) {
+                                $uploadData = $this->upload->data();
+                                $data['category_thumbnail'] = $uploadData['raw_name'] . $uploadData['file_ext'];
                             } else {
-                                $this->session->set_flashdata('error', 'Failed to save category.');
+                                $this->session->set_flashdata('error', 'Failed to upload category thumbnail.');
                                 redirect('admin/category');
+                                return; // Exit the function
                             }
                         }
-                        else
-                        {
-                          $this->session->set_flashdata('error', 'Failed to save category.');
-                          redirect('admin/category');  
+                        // Insert the category data into the database
+                        $response = $this->db->insert('categories', $data);
+                        if ($response) {
+                            $this->session->set_flashdata('success', 'Category successfully added.');
+                        } else {
+                            $this->session->set_flashdata('error', 'Failed to save category.');
                         }
                     }
+                    redirect('admin/category'); // Redirect after processing
                 }
             }
         } else {
             $categories_db = $this->Category_Model->get_category_list_no_child();
             $final_data = array();
             foreach ($categories_db as $row) {
-                $temp['category_id'] = $row['category_id'];
-                $temp['title'] = $row['title'];
-                $temp['category_thumbnail'] = $row['category_thumbnail'];
-                //   $temp['parent_categories'] = $this->Category_Model->get_parent_categories($row['parent_category_id'], array());
-                $temp['created_at'] = date("M d Y", strtotime($row['created_at']));
+                $temp = array(
+                    'category_id' => $row['category_id'],
+                    'title' => $row['title'],
+                    'display_in_order'=>$row['display_in_order'],
+                    'created_at' => date("M d Y h:i A", strtotime($row['created_at']))
+                );
+                // Check if the 'category_thumbnail' key exists in $row
+                if (array_key_exists('category_thumbnail', $row)) {
+                    $temp['category_thumbnail'] = $row['category_thumbnail'];
+                } else {
+                    // Handle the case where 'category_thumbnail' is not present
+                    $temp['category_thumbnail'] = 'default_thumbnail.jpg'; // Provide a default value or handle as needed
+                }
                 array_push($final_data, $temp);
             }
             $data['list'] = $final_data;
@@ -547,37 +552,44 @@ class Admin extends CI_Controller {
             $this->load->view('admin/index', $data);
         }
     }
-    public function login() {
-        $this->load->library('form_validation');
+    public function login()
+    {
+       
+        // Check if the user is already logged in
+        if ($this->session->userdata('admin_login') === 'yes') {
+            redirect('admin'); // Redirect to the admin dashboard if logged in
+        }
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'required');
         if ($this->form_validation->run() == false) {
-            // echo validation_errors();
             $this->session->set_flashdata('error', validation_errors());
-            redirect(base_url('') . 'admin/login', 'refresh');
+            $data['page_name'] = 'login';
+            // Load the login UI page
+            $this->load->view('admin/login', $data); // Adjust the view name to your actual view file
+
         } else {
-            $login_data = $this->db->get_where('admin', ['email' => $this->input->post('email'), 'password' => sha1($this->input->post('password')), ]);
-            $cond = array('email' => $this->input->post('email'));
-            $query = $this->Web_Flowmechs_Model->getAdminTbl('admin', $cond);
-            $userDetail = $query->row();
-            
-            if ($userDetail->status == 0) {
+            $email = $this->input->post('email');
+            $password = sha1($this->input->post('password'));
+            $userDetail = $this->Shinearium_Model->getAdminByEmail('admin', $email);
+            if ($userDetail && $userDetail->status == 0) {
+                $login_data = $this->db->get_where('admin', ['email' => $email, 'password' => $password]);
                 if ($login_data->num_rows() > 0) {
-                    foreach ($login_data->result_array() as $row) {
-                        $this->session->set_userdata('login', 'yes');
-                        $this->session->set_userdata('admin_login', 'yes');
-                        $this->session->set_userdata('admin_id', $row['admin_id']);
-                        $this->session->set_userdata('title', 'admin');
-                        $this->session->set_userdata('user_type', $userDetail->user_type);
-                        redirect('admin');
-                    }
+                    $row = $login_data->row();
+                    $this->session->set_userdata([
+                        'login' => 'yes',
+                        'admin_login' => 'yes',
+                        'admin_id' => $row->admin_id,
+                        'title' => 'admin',
+                        'user_type' => $userDetail->user_type
+                    ]);
+                    return redirect('admin');
                 } else {
-                    $this->session->set_flashdata('error', 'Failed to login, Email OR Password does not matched!');
-                    redirect('admin');
+                    $this->session->set_flashdata('error', 'Failed to login, Email or Password does not match!');
+                    return redirect('admin/login');
                 }
             } else {
-                $this->session->set_flashdata('error', 'Failed to login, Email OR Password does not matched!');
-                redirect('admin');
+                $this->session->set_flashdata('error', 'Failed to login, Email or Password does not match!');
+                return redirect('admin/login');
             }
         }
     }

@@ -15,10 +15,10 @@
 	</div>
 </div>
 <section class="content">
-    <div class="container-fluid">
-        <div class="row">
-          	<div class="col-12">
-				<div class="card card-info">	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="card card-info">
 					<?php if ($this->session->flashdata('error')) { ?>
 						<div class="card-body">
 							<div class="alert alert-danger alert-dismissible show" role="alert">
@@ -28,24 +28,24 @@
 								</button>
 							</div>
 						</div>
-					<?php } ?>				
+					<?php } ?>
 					<form id="formAddProduct" enctype="multipart/form-data" method="post" action="<?php echo base_url(); ?>admin/category/save">
 						<div class="card-body">
 							<div class="row">
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label for="category">Category</label>
 										<select class="form-control select2" style="width: 100%;" id="category" name="category">
 											<option selected="selected" value="">Choose a category</option>
-											<?php 
-												foreach($parent_category as $row){
-													echo '<option value="'.$row['category_id'].'">'.$row['title'].'</option>';
-												}
+											<?php
+											foreach ($parent_category as $row) {
+												echo '<option value="' . $row['category_id'] . '">' . $row['title'] . '</option>';
+											}
 											?>
 										</select>
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<label for="sub_category">Sub Category</label>
 										<select class="form-control select2" style="width: 100%;" id="sub_category" name="sub_category">
@@ -53,37 +53,33 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-4">
 									<div class="form-group">
-										<label for="sub_category">Category Thumbnail  <span class="text-danger"><b>(Note:- Width:300px, Height:400px, File Max Size 250KB)</b></span></label>
-										<input type="file" class="form-control" required name="category_thumbnail">
+										<label for="display_in_order">Display In Order </label>
+										<input type="number" class="form-control" placeholder="Enter Display In Order " name="display_in_order">
 									</div>
 								</div>
-								<!-- <div class="col-md-4">
+								<div class="col-md-6">
 									<div class="form-group">
-										<label for="sub_sub_category">Sub Sub-Category [Optinal]</label>
-										<select class="form-control select2" style="width: 100%;" id="sub_sub_category" name="sub_sub_category">
-											<option selected="selected" value="">Choose a Sub Sub-Category</option>
-										</select>
+										<label for="sub_category">Category Thumbnail <span class="text-danger"><small>(Note:- Width:300px, Height:400px, File Max Size 250KB)</small></span></label>
+										<input type="file" class="form-control" name="category_thumbnail">
 									</div>
-								</div> -->
-							</div>	
-							<div class="row">
-								<div class="col-md-12">
+								</div>
+								<div class="col-md-6">
 									<div class="form-group">
 										<label for="title">Title</label>
 										<input type="text" class="form-control" id="title" name="title" placeholder="Enter title" maxlength="150">
 									</div>
 								</div>
-							</div>					
+							</div>
 						</div>
 						<div class="card-footer">
 							<input type="submit" name="submit" value="Submit" class="btn btn-sm btn-success" />
 							<a href="<?php echo base_url('admin/category'); ?>" type="button" class="btn btn-danger btn-sm ">Cancel</a>
 						</div>
-					</form>					
+					</form>
 				</div>
-          	</div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 </section>

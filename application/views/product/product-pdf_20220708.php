@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>
-			<?php if($title!=''){ echo $title;} else{ "Web Flowmechs";}?>
+			<?php if($title!=''){ echo $title;} else{ "Shinearium";}?>
 		</title>
 		<meta name="keywords" value="<?php if($keywords!=''){ echo $keywords;} else{ " ";}?>">
 		<meta name="description" value="<?php if($keywords!=''){ echo $desc;} else{ " ";}?>">
@@ -25,7 +25,7 @@
 						<div class="row">
 							<div class="col-lg-12 product-single-gallery text-center">
 								<div class="d-flex justify-content-center text-center">
-									<img class="product-single-image pt-2 pb-2" style="width:250px;" src="<?php echo base_url();?>include/images/Web Flowmechs.png" width="468" height="468" alt="product" />
+									<img class="product-single-image pt-2 pb-2" style="width:250px;" src="<?php echo base_url();?>include/images/Shinearium.png" width="468" height="468" alt="product" />
 								</div>
 								<div class="product-slider-container text-center">
 									<div class="product-single-details pt-2 pb-1" style="padding-bottom: unset !important; margin-bottom: unset !important;">
