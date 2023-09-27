@@ -23,8 +23,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+// Define environment-specific base URL
+if (ENVIRONMENT === 'development') {
+    $config['base_url'] = 'http://localhost/shinearium/';
+} else {
+    $config['base_url'] = '/';
+}
 
-$config['base_url'] = 'http://localhost/shinearium/';
 
 /*
 |--------------------------------------------------------------------------
