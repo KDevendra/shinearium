@@ -24,13 +24,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // Define environment-specific base URL
-if (ENVIRONMENT === 'development') {
-    $config['base_url'] = 'http://localhost/shinearium/';
-} else {
-    $config['base_url'] = '/';
-}
+// if (ENVIRONMENT === 'development') {
+//     $config['base_url'] = 'http://localhost/shinearium/';
+// } else {
+//     $config['base_url'] = '/';
+// }
 
-
+$config['base_url'] = '/';
 /*
 |--------------------------------------------------------------------------
 | Index File
