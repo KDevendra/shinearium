@@ -1,8 +1,10 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-class Admin extends CI_Controller {
+defined('BASEPATH') or exit('No direct script access allowed');
+class Admin extends CI_Controller
+{
     public $ip_address = '127.0.0.1';
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
         if (!isset($this->db)) {
             $this->load->database();
@@ -11,7 +13,7 @@ class Admin extends CI_Controller {
         date_default_timezone_set('Asia/Kolkata');
         $this->load->model('Shinearium_Model');
     }
-    public function index() 
+    public function index()
     {
         if ($this->session->userdata('admin_login') == 'yes') {
             $data['page_name'] = 'dashboard';
@@ -21,7 +23,7 @@ class Admin extends CI_Controller {
             $this->load->view('admin/login', $data);
         }
     }
-    public function product($param1 = 'list', $param2 = 'insert') 
+    public function product($param1 = 'list', $param2 = 'insert')
     {
         if ($this->session->userdata('admin_login') == 'yes') {
             if ($param1 == 'upload') {
@@ -118,10 +120,10 @@ class Admin extends CI_Controller {
                         $categories = $category['title'];
                     }
                     if ($product_data->sub_category_id == $category['category_id']) {
-                        $categories.= ', ' . $category['title'];
+                        $categories .= ', ' . $category['title'];
                     }
                     if ($product_data->sub_sub_category_id == $category['category_id']) {
-                        $categories.= ', ' . $category['title'];
+                        $categories .= ', ' . $category['title'];
                     }
                 }
                 $image_names = explode(',', $product_data->images);
@@ -134,7 +136,7 @@ class Admin extends CI_Controller {
                             $image_urls[] = $this->Common_Model->get_file_url($img, 'uploads/products/');
                         }
                         // $image_urls[] = $this->Common_Model->get_file_url($img, 'uploads/products/');
-                        
+
                     }
                 }
                 $product_data->category = $categories;
@@ -178,7 +180,7 @@ class Admin extends CI_Controller {
                             foreach ($sheetData[1] as $colk => $colv) {
                                 $col_map[$colk] = $colv;
                             }
-                            for ($i = 2;$i <= count($sheetData);$i++) {
+                            for ($i = 2; $i <= count($sheetData); $i++) {
                                 $serial = [];
                                 foreach ($sheetData[$i] as $colk => $colv) {
                                     $serial[$col_map[$colk]] = $colv;
@@ -373,7 +375,7 @@ class Admin extends CI_Controller {
                     echo $response;
                 }
             } else if ($param1 == 'status') {
-                $response_update = $this->db->where('product_id', $this->input->post('product_id'))->update('products', ['active_status' => $this->input->post('changed_status') ]);
+                $response_update = $this->db->where('product_id', $this->input->post('product_id'))->update('products', ['active_status' => $this->input->post('changed_status')]);
                 if ($response_update) {
                     $response = json_encode(['status' => true, 'status_code' => '200']);
                 } else {
@@ -393,10 +395,10 @@ class Admin extends CI_Controller {
                             $categories = $category['title'];
                         }
                         if ($row['sub_category_id'] == $category['category_id']) {
-                            $categories.= ', ' . $category['title'];
+                            $categories .= ', ' . $category['title'];
                         }
                         if ($row['sub_sub_category_id'] == $category['category_id']) {
-                            $categories.= ', ' . $category['title'];
+                            $categories .= ', ' . $category['title'];
                         }
                     }
                     $temp['category'] = $categories;
@@ -430,9 +432,9 @@ class Admin extends CI_Controller {
             $this->load->view('admin/login', $data);
         }
     }
-    public function category($param1 = 'list', $param2 = 'insert') 
+    public function category($param1 = 'list', $param2 = 'insert')
     {
-        if ($param1 == 'child') {           
+        if ($param1 == 'child') {
             $parent_id = $this->input->post('id');
             if ($parent_id) {
                 $child_category = $this->Category_Model->get_child_category($parent_id);
@@ -463,38 +465,35 @@ class Admin extends CI_Controller {
                             $this->session->set_flashdata('error', 'Please change the title; a category with the same title already exists.');
                             redirect('admin/category/edit/' . $this->input->post('category_id'), 'refresh');
                             return; // Exit the function
+
                         }
                         $data['parent_category_id'] = $this->input->post('category');
                         $data['ip_address'] = $this->ip_address;
                         // Handle category_thumbnail upload only if submitted
                         if (!empty($_FILES['category_thumbnail']['tmp_name'])) {
-                            $config['upload_path'] = './uploads/category_thumbnail/';
-                            $config['max_size'] = '500';
+                            $config['upload_path'] = FCPATH . 'uploads/category_thumbnail/'; // FCPATH is a CodeIgniter constant representing the server's file system path to the index.php file.
+                            $config['max_size'] = '5000';
                             $config['max_width'] = 300;
                             $config['max_height'] = 400;
                             $config['allowed_types'] = 'jpg|png|jpeg';
-
                             $this->load->library('upload', $config);
-
                             if ($this->upload->do_upload('category_thumbnail')) {
                                 $uploadData = $this->upload->data();
                                 $data['category_thumbnail'] = $uploadData['raw_name'] . $uploadData['file_ext'];
                             } else {
-                                $this->session->set_flashdata('error', 'Failed to upload category thumbnail.');
+                                $this->session->set_flashdata('error', $this->upload->display_errors());
                                 redirect('admin/category/edit/' . $this->input->post('category_id'));
                                 return; // Exit the function
+
                             }
                         }
-
                         // Update the category data in the database
                         $response = $this->db->where('category_id', $this->input->post('category_id'))->update('categories', $data);
-
                         if ($response) {
                             $this->session->set_flashdata('success', 'Category successfully updated.');
                         } else {
                             $this->session->set_flashdata('error', 'Failed to update category.');
                         }
-
                         redirect('admin/category');
                     }
                 }
@@ -524,6 +523,7 @@ class Admin extends CI_Controller {
                                 $this->session->set_flashdata('error', 'Failed to upload category thumbnail.');
                                 redirect('admin/category');
                                 return; // Exit the function
+
                             }
                         }
                         // Insert the category data into the database
@@ -535,26 +535,22 @@ class Admin extends CI_Controller {
                         }
                     }
                     redirect('admin/category'); // Redirect after processing
+
                 }
             }
         } else {
             $categories_db = $this->Category_Model->get_category_list_no_child();
             $final_data = array();
             foreach ($categories_db as $row) {
-                $temp = array(
-                    'category_id' => $row['category_id'],
-                    'title' => $row['title'],
-                    'display_in_order' => $row['display_in_order'],
-                    'created_at' => date("M d Y h:i A", strtotime($row['created_at']))
-                );
+                $temp = array('category_id' => $row['category_id'], 'title' => $row['title'], 'display_in_order' => $row['display_in_order'], 'created_at' => date("M d Y h:i A", strtotime($row['created_at'])));
                 // Check if the 'category_thumbnail' key exists in $row
                 if (array_key_exists('category_thumbnail', $row)) {
                     $temp['category_thumbnail'] = $row['category_thumbnail'];
                 } else {
                     // Handle the case where 'category_thumbnail' is not present
                     $temp['category_thumbnail'] = 'default_thumbnail.jpg'; // Provide a default value or handle as needed
-                }
 
+                }
                 // Check if parent_category_id is 0
                 if ($row['parent_category_id'] == 0) {
                     // Main category, set the category name as "Main Category"
@@ -563,11 +559,10 @@ class Admin extends CI_Controller {
                     // Sub-category, fetch the category name from the database or handle as needed
                     $subCategory = $this->Category_Model->get_category_by_id($row['parent_category_id']);
                     $temp['category_name'] = $subCategory->title; // Assuming 'title' is the category name field
-                }
 
+                }
                 array_push($final_data, $temp);
             }
-
             $data['list'] = $final_data;
             $data['page_name'] = 'category';
             $this->load->view('admin/index', $data);
@@ -575,10 +570,10 @@ class Admin extends CI_Controller {
     }
     public function login()
     {
-       
         // Check if the user is already logged in
         if ($this->session->userdata('admin_login') === 'yes') {
             redirect('admin'); // Redirect to the admin dashboard if logged in
+
         }
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'required');
@@ -596,13 +591,7 @@ class Admin extends CI_Controller {
                 $login_data = $this->db->get_where('admin', ['email' => $email, 'password' => $password]);
                 if ($login_data->num_rows() > 0) {
                     $row = $login_data->row();
-                    $this->session->set_userdata([
-                        'login' => 'yes',
-                        'admin_login' => 'yes',
-                        'admin_id' => $row->admin_id,
-                        'title' => 'admin',
-                        'user_type' => $userDetail->user_type
-                    ]);
+                    $this->session->set_userdata(['login' => 'yes', 'admin_login' => 'yes', 'admin_id' => $row->admin_id, 'title' => 'admin', 'user_type' => $userDetail->user_type]);
                     return redirect('admin');
                 } else {
                     $this->session->set_flashdata('error', 'Failed to login, Email or Password does not match!');
@@ -614,11 +603,13 @@ class Admin extends CI_Controller {
             }
         }
     }
-    public function logout() {
+    public function logout()
+    {
         $this->session->sess_destroy();
         redirect('admin');
     }
-    public function changePassword($param1 = 'page') {
+    public function changePassword($param1 = 'page')
+    {
         if ($this->session->userdata('admin_login') == 'yes') {
             if ($param1 == 'save') {
                 $this->load->library('form_validation');
@@ -633,9 +624,9 @@ class Admin extends CI_Controller {
                     $this->session->set_flashdata('error', 'New Password And Retype New Password does not matched');
                     redirect(base_url('') . 'change-password', 'refresh');
                 } else {
-                    $login_data = $this->db->get_where('admin', ['admin_id' => $this->session->userdata('admin_id'), 'password' => sha1($this->input->post('current_password')), ]);
+                    $login_data = $this->db->get_where('admin', ['admin_id' => $this->session->userdata('admin_id'), 'password' => sha1($this->input->post('current_password')),]);
                     if ($login_data->num_rows() > 0) {
-                        $response_update = $this->db->where('admin_id', $this->session->userdata('admin_id'))->update('admin', ['password' => sha1($this->input->post('new_password')) ]);
+                        $response_update = $this->db->where('admin_id', $this->session->userdata('admin_id'))->update('admin', ['password' => sha1($this->input->post('new_password'))]);
                         if ($response_update) {
                             redirect(base_url('') . 'admin/logout');
                         } else {
