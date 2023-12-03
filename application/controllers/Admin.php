@@ -432,6 +432,42 @@ class Admin extends CI_Controller
             $this->load->view('admin/login', $data);
         }
     }
+    function handleFileUpload($inputName, $uploadPath, $allowedTypes, $maxSize)
+    {
+        if (!empty($_FILES[$inputName]["name"])) {
+            $config["upload_path"] = $uploadPath;
+            $config["max_size"] = $maxSize;
+            $config["allowed_types"] = $allowedTypes;
+            $CI = &get_instance(); // Assuming you're working with CodeIgniter
+
+            $CI->load->library("upload", $config);
+            $CI->upload->initialize($config); // Initialize the upload library
+
+            if ($CI->upload->do_upload($inputName)) {
+                $uploadData = $CI->upload->data();
+
+                // Generate a unique filename for the uploaded file
+                $fileExtension = pathinfo($uploadData["file_name"], PATHINFO_EXTENSION);
+                $uniqueFilename = uniqid($inputName . "_") . "." . $fileExtension;
+
+                // Move the uploaded file to the new unique filename
+                $oldFilePath = $config["upload_path"] . $uploadData["file_name"];
+                $newFilePath = $config["upload_path"] . $uniqueFilename;
+
+                if (rename($oldFilePath, $newFilePath)) {
+                    return $uniqueFilename; // Return the new unique filename
+                } else {
+                    $CI->session->set_flashdata("error", "Failed to rename the uploaded file.");
+                    return false;
+                }
+            } else {
+                $CI->session->set_flashdata("error", $CI->upload->display_errors());
+                return false;
+            }
+        } else {
+            return ""; // Return an empty string when no file is uploaded
+        }
+    }
     public function category($param1 = 'list', $param2 = 'insert')
     {
         if ($param1 == 'child') {
@@ -470,23 +506,7 @@ class Admin extends CI_Controller
                         $data['parent_category_id'] = $this->input->post('category');
                         $data['ip_address'] = $this->ip_address;
                         // Handle category_thumbnail upload only if submitted
-                        if (!empty($_FILES['category_thumbnail']['tmp_name'])) {
-                            $config['upload_path'] = FCPATH . 'uploads/category_thumbnail/'; // FCPATH is a CodeIgniter constant representing the server's file system path to the index.php file.
-                            $config['max_size'] = '5000';
-                            $config['max_width'] = 300;
-                            $config['max_height'] = 400;
-                            $config['allowed_types'] = 'jpg|png|jpeg';
-                            $this->load->library('upload', $config);
-                            if ($this->upload->do_upload('category_thumbnail')) {
-                                $uploadData = $this->upload->data();
-                                $data['category_thumbnail'] = $uploadData['raw_name'] . $uploadData['file_ext'];
-                            } else {
-                                $this->session->set_flashdata('error', $this->upload->display_errors());
-                                redirect('admin/category/edit/' . $this->input->post('category_id'));
-                                return; // Exit the function
-
-                            }
-                        }
+                        $data['category_thumbnail'] = $this->handleFileUpload("category_thumbnail", "./uploads/category_thumbnail/", "jpg|png|jpeg", 5000);
                         // Update the category data in the database
                         $response = $this->db->where('category_id', $this->input->post('category_id'))->update('categories', $data);
                         if ($response) {

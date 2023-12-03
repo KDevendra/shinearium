@@ -77,9 +77,9 @@ if ($_SERVER['SERVER_NAME'] === 'localhost') {
 	// Local environment
 	$db['default'] = array(
 		'dsn'      => '',
-		'hostname' => 'localhost:2023',
+		'hostname' => 'localhost',
 		'username' => 'root',
-		'password' => 'root',
+		'password' => '',
 		'database' => 'db_shinearium',
 		'dbdriver' => 'mysqli',
 		'dbprefix' => '',

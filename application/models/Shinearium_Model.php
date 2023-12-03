@@ -255,6 +255,12 @@ public  function dbDeleteMedia($tbl, $cond=NULL)
     $this->db->order_by('display_in_order', 'ASC');
     return $this->db->get('categories')->result();
   }
+  public function getCategoriesList()
+  {
+    $this->db->where('status', 0);
+    $this->db->order_by('display_in_order', 'ASC');
+    return $this->db->get('categories')->result_array();
+  }
   public function dbGetCategory($id, $limit) 
   {
     if(!empty($id)){ 

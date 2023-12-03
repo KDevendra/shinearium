@@ -27,4 +27,19 @@ class Shinearium extends CI_Controller
         // Load the view with SEO data
         $this->load->view('shinearium/index', $data);
     }
+    public function shop()
+    {
+        // Get categories with condition and order
+        $data['categories_list'] = $this->Shinearium_Model->getCategoriesList();
+        if (empty($data['categories_list'])) {
+          // Handle the case where no categories are found
+          $data['error_message'] = "No categories found.";
+        }
+        // SEO elements
+        $data['title'] = "Exquisite Jewelry - Necklaces, Pendants, Bracelets, Earrings, Rings";
+        $data['description'] = "Explore a world of elegance and style with our exquisite jewelry collection. Shop for necklaces, pendants, bracelets, earrings, and rings that are designed to dazzle and delight.";
+        $data['canonical'] = base_url(); // Set your canonical URL
+        // Load the view with SEO data
+        $this->load->view('shinearium/shop', $data);
+    }
 }

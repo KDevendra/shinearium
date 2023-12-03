@@ -8,6 +8,7 @@ $route['admin'] = 'Admin/index';
 $route['login'] = 'Admin/login';
 $route['logout'] = 'Admin/logout';
 $route['change-password'] = 'Admin/changePassword';
+$route['shop'] = 'Shinearium/shop';
 /*** admin routes - end ***/
 
 /*** Product dynamic routes - start*/
